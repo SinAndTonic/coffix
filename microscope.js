@@ -21,3 +21,6 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
+console.log("Hello World");
+//this works on both client and server!
