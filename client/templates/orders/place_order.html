@@ -1,0 +1,36 @@
+<template name="placeOrder">
+  <form class="main form page">
+	<div class="form-group">
+  <label for="sel1">Coffee:</label>
+  <select class="form-control" id="sel1" name="type">
+    <option>Flat White</option>
+    <option>Espresso</option>
+    <option>Long Black</option>
+    <option>Another one</option>
+  </select>
+
+  <label for="sel1">Milk:</label>
+  <select class="form-control" id="sel1" name="milk">
+    <option>Normal Milk</option>
+    <option>No Milk</option>
+    <option>Soy Milk</option>
+  </select>
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="" name="sugar">
+    Sugar
+  </label>
+</div>
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="" name="almond">
+    Almond Syrup
+  </label>
+</div>
+
+</div>
+
+<input type="submit" value="Order" class="btn btn-primary"/>
+  </form>
+</template>
