@@ -1,6 +1,6 @@
 Template.viewOrders.helpers({
 	orders: function(){
-		return Orders.find();
+		return Orders.find({complete : false},{sort: {createdAt: -1}});
 	},
 	userLookup: function(){
 		
@@ -10,6 +10,6 @@ Template.viewOrders.helpers({
 Template.viewOrders.events({
 	'click [name=remove]': function(e){
 		var theId = this._id;
-		Meteor.call('removeOrder', theId);
+		Meteor.call('updateOrder', theId);
 	}
 });
