@@ -5,12 +5,19 @@ Template.placeOrder.events({
 		var userId = Meteor.userId();
 
 		var userName = Meteor.user().username;
+        
+     var theExtras = [];
 
-		var theExtras = ['Sugar','Syrup'];
+     $('#extraArea :checked').each(function() {
+       theExtras.push($(this).val());
+     });
+     
+     	console.log(theExtras);
 
 		var order = {
-			UserId: userId,
+			userId: userId,
 			userName: userName,
+			createdAt: new Date(),
 			type: $(e.target).find('[name=type]').val(),
 			milk: $(e.target).find('[name=milk]').val(),
 			extras: theExtras
@@ -25,6 +32,6 @@ Template.placeOrder.events({
 		console.log(order);
 		order._id = Orders.insert(order);
 		//Router.go('postPage', post);
-		//Meteor.call('removeOrder', this._id);
+		//Meteor.call('newOrder', order);
 	}
 });
