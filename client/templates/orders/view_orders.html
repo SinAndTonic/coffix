@@ -4,7 +4,7 @@
 			<th>User</th><th>Coffee Type</th><th>Milk Type</th><th>Extras</th><th>Remove</th>
 		{{#each orders}}
 			
-			<tr><td>{{userName}}</td><td>{{type}}</td><td>{{milk}}</td><td>{{> extras}}</td><td><input type="button" name="remove" value="X"></td></tr>
+			<tr><td>{{userName}}</td>{{> mainOrder}}<td>{{> extras}}</td><td><input type="button" name="remove" value="X"></td></tr>
 			
 		{{/each}}
 	</table>
@@ -13,4 +13,10 @@
 
 <template name='extras'>
 	{{#each extras}}<li>{{.}}</li>{{/each}}
+</template>
+
+<template name='mainOrder'>
+	{{#each theOrder}}
+	<td>{{.}}</td>
+	{{/each}}
 </template>

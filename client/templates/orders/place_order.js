@@ -11,15 +11,19 @@ Template.placeOrder.events({
      $('#extraArea :checked').each(function() {
        theExtras.push($(this).val());
      });
-     
-     	console.log(theExtras);
+
+     var theOrder = [];
+
+$('#orderArea option:selected').each(function() {
+       theOrder.push($(this).val());
+     });
+
 
 		var order = {
 			userId: userId,
 			userName: userName,
 			createdAt: new Date(),
-			type: $(e.target).find('[name=type]').val(),
-			milk: $(e.target).find('[name=milk]').val(),
+			theOrder: theOrder,
 			extras: theExtras
 		};
 
@@ -29,7 +33,7 @@ Template.placeOrder.events({
 		//};
 		//console.log(post);
 		//console.log(extras);
-		console.log(order);
+		//console.log(order);
 		order._id = Orders.insert(order);
 		//Router.go('postPage', post);
 		//Meteor.call('newOrder', order);
