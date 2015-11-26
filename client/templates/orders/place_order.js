@@ -14,7 +14,7 @@ Template.placeOrder.events({
 
      var theOrder = [];
 
-$('#orderArea option:selected').each(function() {
+	$('#orderArea option:selected').each(function() {
        theOrder.push($(this).val());
      });
 
@@ -38,4 +38,5 @@ $('#orderArea option:selected').each(function() {
 		//Router.go('postPage', post);
 		//Meteor.call('newOrder', order);
 	}
+
 });
