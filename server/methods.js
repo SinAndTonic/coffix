@@ -5,5 +5,8 @@ Meteor.methods({
   },
   updateOrder: function (theId) {
   	Orders.update({'_id': theId},{$set: {complete: true}});
+  },
+  newOrder: function(theOrder){
+  	Orders.insert(theOrder);
   }
 });

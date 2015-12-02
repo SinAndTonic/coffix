@@ -35,9 +35,9 @@ Template.placeOrder.events({
 		//console.log(post);
 		//console.log(extras);
 		//console.log(order);
-		order._id = Orders.insert(order);
+		//order._id = Orders.insert(order);
 		//Router.go('postPage', post);
-		//Meteor.call('newOrder', order);
+		Meteor.call('newOrder', order);
 	}
 
 });
