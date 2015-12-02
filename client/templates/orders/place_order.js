@@ -24,7 +24,8 @@ Template.placeOrder.events({
 			userName: userName,
 			createdAt: new Date(),
 			theOrder: theOrder,
-			extras: theExtras
+			extras: theExtras,
+			complete: false
 		};
 
 		//var totalOrder = {
