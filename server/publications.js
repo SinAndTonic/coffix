@@ -6,4 +6,11 @@ Meteor.publish('itemNames', function() {
 	return ItemNames.find();
 });
 
-Roles.addUsersToRoles( 'eEGzvyDuRMrKbmPrv', ['admin']);
+//Meteor.publish( 'orders', function() {
+//  if ( Roles.userIsInRole( this.userId, 'admin') ) {
+//    return Orders.find();
+//  } else {
+//    this.stop();
+//    return;
+//  }
+//});
