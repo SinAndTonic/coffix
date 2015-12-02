@@ -5,3 +5,5 @@ Meteor.publish('orders', function() {
 Meteor.publish('itemNames', function() {
 	return ItemNames.find();
 });
+
+Roles.addUsersToRoles( 'eEGzvyDuRMrKbmPrv', ['admin']);
