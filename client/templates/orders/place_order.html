@@ -1,5 +1,5 @@
 <template name="placeOrder">
-  <form class="main form page">
+<!--   <form class="main form page">
 	<div class="form-group">
     <div id="orderArea">
   <label for="sel1">Coffee:</label>
@@ -31,5 +31,8 @@
 </div>
 
 <input type="submit" value="Order" class="btn btn-primary"/>
-  </form>
+  </form> -->
+
+{{> quickForm collection="Orders" id="insertOrderForm" type="insert"}}
+
 </template>
