@@ -33,3 +33,12 @@ Meteor.publish( 'orders', function() {
     return;
   }
 });
+
+Meteor.publish( 'books', function(){
+	if ( Roles.userIsInRole( this.userId, 'admin') ) {
+    return Books.find();
+  } else {
+    this.stop();
+    return;
+  }
+});
