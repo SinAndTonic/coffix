@@ -6,6 +6,11 @@ Meteor.publish('itemNames', function() {
 	return ItemNames.find();
 });
 
+Meteor.publish('leads', function() {
+	return Leads.find();
+});
+
+
 // Meteor.publish('orders', function() {
 // 	return Orders.find();
 // });
@@ -28,15 +33,6 @@ Meteor.publish('itemNames', function() {
 Meteor.publish( 'orders', function() {
   if ( Roles.userIsInRole( this.userId, 'admin') ) {
     return Orders.find();
-  } else {
-    this.stop();
-    return;
-  }
-});
-
-Meteor.publish( 'books', function(){
-	if ( Roles.userIsInRole( this.userId, 'admin') ) {
-    return Books.find();
   } else {
     this.stop();
     return;

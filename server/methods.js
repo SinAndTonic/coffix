@@ -9,4 +9,5 @@ Meteor.methods({
   newOrder: function(theOrder){
   	Orders.insert(theOrder);
   }
+
 });

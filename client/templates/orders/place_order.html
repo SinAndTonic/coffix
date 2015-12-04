@@ -33,6 +33,8 @@
 <input type="submit" value="Order" class="btn btn-primary"/>
   </form> -->
 
-{{> quickForm collection="Orders" id="insertOrderForm" type="insert"}}
+{{#autoForm collection="Orders" type="insert" id="FieldValueIsForm"}}
+  {{> afQuickField name="extras" options=extraList }}
+{{/autoForm}}
 
 </template>
