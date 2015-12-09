@@ -10,6 +10,9 @@ Template.viewAllOrders.helpers({
 Template.viewAllOrders.events({
 	'click [name=remove]': function(e){
 		var theId = this._id;
-		Meteor.call('removeOrder', theId);
+		var theUserName = Orders.find({_id: this._id}).fetch();
+		console.log(theUserName);
+		if (window.confirm("Do you really want to permanently remove: \n" + theUserName.userName))
+		Orders.remove({'_id' : theId});
 	}
 });
