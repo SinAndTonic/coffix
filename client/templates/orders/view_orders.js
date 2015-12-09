@@ -10,6 +10,7 @@ Template.viewOrders.helpers({
 Template.viewOrders.events({
 	'click [name=remove]': function(e){
 		var theId = this._id;
-		Meteor.call('updateOrder', theId);
+		console.log(theId);
+		Orders.update({'_id': theId},{$set: {complete: true}});
 	}
 });
