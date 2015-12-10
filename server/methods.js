@@ -8,6 +8,12 @@ Meteor.methods({
   },
   newOrder: function(theOrder){
   	Orders.insert(theOrder);
-  }
+  },
+  getServerTime: function () {
+            var date = new Date();
+
+            console.log(moment(date).format('hh:mm'));
+            return moment(date).format('HH:mm');
+        }
 
 });
