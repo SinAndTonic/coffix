@@ -1,6 +1,6 @@
 Template.viewOrders.helpers({
 	orders: function(){
-		return Orders.find({complete : false},{sort: {createdAt: -1}});
+		return Orders.find({complete : false},{sort: {collectTime: 1}});
 	},
 	userLookup: function(){
 		
