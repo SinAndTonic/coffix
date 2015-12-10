@@ -11,11 +11,12 @@ Template.placeOrder.helpers({
 		});
 	},
 	serverTime: function(){
-		// return Meteor.call('getServerTime', function(err, data){
-		// 		console.log(data);
-		// 		return data;
-		// });
-return "12:30";
+		// console.log(Session.get('time'));
+
+		return Tracker.nonreactive(function() {
+           
+			return moment(Session.get('time')).add(10,'m').format('HH:mm');
+		});
 	}
 
 });

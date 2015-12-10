@@ -10,10 +10,8 @@ Meteor.methods({
   	Orders.insert(theOrder);
   },
   getServerTime: function () {
-            var date = new Date();
-
-            console.log(moment(date).format('hh:mm'));
-            return moment(date).format('HH:mm');
+            var _time = Date.now();
+            return _time;
         }
 
 });
