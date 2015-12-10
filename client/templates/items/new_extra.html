@@ -1,5 +1,21 @@
 <template name="newExtra">
+<h1>Edit Extras</h1>
+{{#each showExtras}}
+	<li id={{selected}}>{{item}}</li>
+{{/each}}
 
-{{> quickForm collection="ExtraItems" id="insertExtra" type="insert"}}
+{{#autoForm id="editExtras" type="update" collection="ExtraItems" doc=selectedItem}}
 
+  {{> afQuickField name="item"}}
+  
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" >Submit</button>
+
+  </div>
+
+{{/autoForm}}
+    <button class="btn btn-default new">New</button>
+    <button class="btn btn-default delete">Delete</button>
 </template>
+
+
