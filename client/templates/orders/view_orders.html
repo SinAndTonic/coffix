@@ -5,7 +5,7 @@
 			<th>Colelction Time</th><th>User</th><th>Coffee Type</th><th>Milk Type</th><th>Extras</th><th>Complete</th>
 		{{#each orders}}
 			
-			<tr><td>{{collectTime}}</td><td>{{userName}}</td><td>{{mainOrder}}</td><td>Milk Type</td><td>{{extras}}</td><td><button type="button" name="remove" class="btn btn-default btn-lg">
+			<tr><td>{{formattedDate}}</td><td>{{userName}}</td><td>{{mainOrder}}</td><td>Milk Type</td><td>{{extras}}</td><td><button type="button" name="remove" class="btn btn-default btn-lg">
   <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 </button>
 			</td></tr>

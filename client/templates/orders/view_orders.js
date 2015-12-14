@@ -1,10 +1,11 @@
 Template.viewOrders.helpers({
 	orders: function(){
 		return Orders.find({complete : false},{sort: {collectTime: 1}});
+
 	},
-	userLookup: function(){
-		
-	}
+	formattedDate: function(){
+    return moment(this.date).format("HH:mm - DD/MM/YY");  // or whatever format you prefer
+  }
 });
 
 Template.viewOrders.events({
