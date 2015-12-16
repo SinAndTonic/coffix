@@ -11,7 +11,7 @@ Meteor.methods({
   },
   getServerTime: function () {
             var _time = Date.now();
-            return _time;
+            return moment(_time).format();
         }
 
 });
