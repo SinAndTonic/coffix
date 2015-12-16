@@ -4,7 +4,7 @@ Template.viewOrders.helpers({
 
 	},
 	formattedDate: function(){
-    return moment(this.date).format("HH:mm - DD/MM/YY");  // or whatever format you prefer
+    return moment(this.collectTime).format("HH:mm - DD/MM/YY");  // or whatever format you prefer
   }
 });
 
