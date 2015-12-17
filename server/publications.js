@@ -15,3 +15,7 @@ Meteor.publish( 'orders', function() {
     return;
   }
 });
+
+Meteor.publish('openTimes', function(){
+	return OpenTimes.find();
+});
