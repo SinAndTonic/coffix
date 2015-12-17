@@ -1,15 +1,17 @@
 Template.viewOrders.helpers({
 	orders: function(){
-		return Orders.find({complete : false},{sort: {createdAt: -1}});
+		return Orders.find({complete : false},{sort: {collectTime: 1}});
+
 	},
-	userLookup: function(){
-		
-	}
+	formattedDate: function(){
+    return moment(this.collectTime).format("HH:mm - DD/MM/YY");  // or whatever format you prefer
+  }
 });
 
 Template.viewOrders.events({
 	'click [name=remove]': function(e){
 		var theId = this._id;
-		Meteor.call('updateOrder', theId);
+		console.log(theId);
+		Orders.update({'_id': theId},{$set: {complete: true}});
 	}
 });

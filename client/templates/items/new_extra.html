@@ -1,10 +1,10 @@
-<template name="newItem">
-<h1>Edit Items</h1>
-{{#each showItems}}
+<template name="newExtra">
+<h1>Edit Extras</h1>
+{{#each showExtras}}
 	<li id={{selected}}>{{item}}</li>
 {{/each}}
 
-{{#autoForm id="editItems" type="update" collection="ItemNames" doc=selectedItem}}
+{{#autoForm id="editExtras" type="update" collection="ExtraItems" doc=selectedItem}}
 
   {{> afQuickField name="item"}}
   
@@ -17,3 +17,5 @@
     <button class="btn btn-default new">New</button>
     <button class="btn btn-default delete">Delete</button>
 </template>
+
+

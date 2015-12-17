@@ -1,35 +1,12 @@
 <template name="placeOrder">
-  <form class="main form page">
-	<div class="form-group">
-    <div id="orderArea">
-  <label for="sel1">Coffee:</label>
-  <select class="form-control" id="sel1" name="type">
-{{> displayItems}}
-  </select>
+<h1>Place your order</h1>
+{{#autoForm collection="Orders" type="insert" id="newOrderForm"}}
+  {{> afQuickField name="mainOrder" options=mainList}}
 
-  <label for="sel1">Milk:</label>
-  <select class="form-control" id="sel1" name="milk">
-    <option>Normal Milk</option>
-    <option>No Milk</option>
-    <option>Soy Milk</option>
-  </select>
-  </div>
-<div id="extraArea">
-<div class="checkbox">
-  <label>
-    <input type="checkbox" value="sugar" name="Sugar">
-    Sugar
-  </label>
-</div>
-<div class="checkbox">
-  <label>
-    <input type="checkbox" value="almond" name="Almond Syrup">
-    Almond Syrup
-  </label>
-</div>
-</div>
-</div>
+  {{> afQuickField name="extras" options=extraList }}
 
-<input type="submit" value="Order" class="btn btn-primary"/>
-  </form>
+  {{> afQuickField name="collectTime" type="time" value=serverTime}}
+  <button type="submit" class="btn btn-primary">Place Order</button>
+{{/autoForm}}
+
 </template>
