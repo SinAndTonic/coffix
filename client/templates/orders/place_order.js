@@ -11,8 +11,7 @@ Template.placeOrder.helpers({
 		});
 	},
 	serverTime: function(){
-		// console.log(Session.get('time'));
-
+		
 		return Tracker.nonreactive(function() {
            
 			return moment(Session.get('time')).add(10,'m').format('HH:mm');

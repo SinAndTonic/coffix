@@ -1,14 +1,34 @@
 <template name="myOrders">
 <h1>Your Orders</h1>
 	<table class="table">
-			<th>User</th><th>Coffee Type</th><th>Milk Type</th><th>Extras</th><th>Cancel Order</th>
+			<th>Collection Time</th><th>Coffee Type</th><th>Milk Type</th><th>Extras</th><th>Status</th><th>Cancel Order</th>
 		{{#each myOrder}}
 			
-			<tr><td>{{userName}}</td><td>{{mainOrder}}</td><td>Milk Type</td><td>{{extras}}</td><td><button type="button" name="cancel" class="btn btn-danger btn-sm">
+			<tr><td>{{formattedDate}}</td><td>{{mainOrder}}</td><td>Milk Type</td><td>{{extras}}</td><td>{{{orderStatus}}}</td><td><button type="button" name="cancel" class="btn btn-danger btn-sm">
   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 </button>
 			</td></tr>
 			
 		{{/each}}
 	</table>
+<h1>Completed Orders</h1>
+<table class="table">
+			<th>Collection Time</th><th>Coffee Type</th><th>Milk Type</th><th>Extras</th>
+		{{#each myCompletedOrder}}
+			
+			<tr><td>{{formattedDate}}</td><td>{{mainOrder}}</td><td>Milk Type</td><td>{{extras}}</td></tr>
+			
+		{{/each}}
+	</table>
+
+<h1>Cancelled Orders</h1>
+<table class="table">
+			<th>Collection Time</th><th>Coffee Type</th><th>Milk Type</th><th>Extras</th>
+		{{#each myCancelledOrder}}
+			
+			<tr style="text-decoration: line-through;"><td>{{formattedDate}}</td><td>{{mainOrder}}</td><td>Milk Type</td><td>{{extras}}</td></tr>
+			
+		{{/each}}
+	</table>
+
 </template>

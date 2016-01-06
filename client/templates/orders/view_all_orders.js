@@ -4,9 +4,10 @@ Template.viewAllOrders.helpers({
 	orders: function(){
 		return Orders.find({},{sort: {createdAt: -1}});
 	},
-	userLookup: function(){
-		
-	}
+	isCancelled: function(){
+  		if(this.cancelled)
+  			return "text-decoration: line-through; background-color:red;";
+  }
 });
 
 Template.viewAllOrders.events({

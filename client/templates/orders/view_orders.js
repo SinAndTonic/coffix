@@ -4,7 +4,11 @@ Template.viewOrders.helpers({
 
 	},
 	formattedDate: function(){
-    return moment(this.collectTime).format("HH:mm - DD/MM/YY");  // or whatever format you prefer
+    return moment(this.collectTime).format("HH:mm - DD/MM/YY");
+  },
+  isCancelled: function(){
+  		if(this.cancelled)
+  			return "text-decoration: line-through; background-color:red;";
   }
 });
 
