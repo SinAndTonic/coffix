@@ -2,11 +2,11 @@
 <h1>All Orders</h1>
 	<div class="posts">
 	<table class="table">
-			<th>User</th><th>Coffee Type</th><th>Milk Type</th><th>Extras</th><th>Complete</th>
+			<th>User</th><th>Coffee Type</th><th>Milk Type</th><th>Extras</th><th>Delete</th>
 		{{#each orders}}
 			
-			<tr><td>{{userName}}</td><td>{{mainOrder}}</td><td>Milk Type</td><td>{{extras}}</td><td><button type="button" name="remove" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+			<tr><td>{{userName}}</td><td>{{mainOrder}}</td><td>Milk Type</td><td>{{extras}}</td><td><button type="button" name="remove" class="btn btn-danger btn-lg">
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 </button>
 			</td></tr>
 			
